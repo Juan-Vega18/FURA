@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Estoy en la religión correcta? Cristianismo vs. Islam</title>
+<meta name="description" content="Material de lectura y defensa de la fe para jóvenes universitarios: comparativa histórica, teológica y documentaria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.44.0/iconfont/tabler-icons.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+<style>
+  :root{
+    --bg-page:#F7F5EF;
+    --bg-card:#FFFFFF;
+    --bg-soft:#F1EFE6;
+    --ink-900:#1E1C16;
+    --ink-700:#4A473D;
+    --ink-500:#7A766A;
+    --ink-muted:#9A9686;
+    --border:#E2DECF;
+    --border-strong:#CFC9B3;
+
+    --gold:#A6822E;
+    --gold-50:#FAF3E1;
+    --gold-800:#5C4712;
+
+    --burgundy:#7A2E2E;
+    --burgundy-50:#F7EAE9;
+    --burgundy-800:#4A1B1B;
+
+    --teal:#1D6E5E;
+    --teal-50:#E6F1EE;
+    --teal-800:#0C3B31;
+
+    --blue:#2a5f8a;
+    --red:#a23c3c;
+    --green:#2f7a52;
+    --purple:#6b4c9a;
+    --orange:#d97706;
+
+    --radius-sm:8px;
+    --radius-md:14px;
+    --radius-lg:20px;
+    --shadow-card:0 1px 2px rgba(30,28,22,0.04), 0 6px 20px rgba(30,28,22,0.05);
+    --shadow-hover:0 12px 32px rgba(30,28,22,0.12);
+  }
+
+  [data-mode="dark"]{
+    --bg-page:#171612;
+    --bg-card:#1F1E19;
+    --bg-soft:#242219;
+    --ink-900:#F2EFE4;
+    --ink-700:#CFCABA;
+    --ink-500:#A9A492;
+    --ink-muted:#847F6E;
+    --border:#332F24;
+    --border-strong:#463F2E;
+
+    --gold:#D8B45A;
+    --gold-50:#2A2314;
+    --gold-800:#F3DFA6;
+
+    --burgundy:#D98080;
+    --burgundy-50:#2C1817;
+    --burgundy-800:#F2C9C9;
+
+    --teal:#5FC3AB;
+    --teal-50:#132622;
+    --teal-800:#BFE9DC;
+
+    --blue:#6fa3d1;
+    --red:#e08585;
+    --green:#7fd1a4;
+    --purple:#b59fe0;
+    --orange:#f5a623;
+
+    --shadow-card:0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    --shadow-hover:0 12px 40px rgba(0,0,0,0.4);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    overflow-x:hidden;
+    background:var(--bg-page);
+    color:var(--ink-900);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.7;
+    transition:background .3s ease, color .3s ease;
+  }
+
+  .sr-only{
+    position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+    overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
+  }
+
+  a{color:var(--gold-800); transition:color .25s ease;}
+  a:hover{color:var(--gold);}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 20px;
+    background:color-mix(in srgb, var(--bg-page) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:0.5px solid var(--border);
+  }
+  .topbar .brand{
+    display:flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.02em; color:var(--ink-700);
+  }
+  .topbar .brand i{ color:var(--gold); font-size:16px; }
+  .watermark{
+    color:var(--ink-muted); font-size:10px; font-weight:600;
+    letter-spacing:.08em; line-height:1.3; text-transform:uppercase;
+    text-align:center; max-width:360px;
+  }
+  .progress-track{
+    position:fixed; top:0; left:0; height:3px; width:100%;
+    background:transparent; z-index:60;
+  }
+  .progress-bar{
+    height:100%; width:0%;
+    background:linear-gradient(90deg, var(--gold), var(--burgundy), var(--teal));
+    transition:width .1s linear;
+  }
+  .mode-toggle{
+    border:0.5px solid var(--border-strong); background:var(--bg-card);
+    color:var(--ink-700); border-radius:20px; padding:6px 12px;
+    font-size:12px; cursor:pointer; display:flex; align-items:center; gap:6px;
+    transition:all .3s ease;
+  }
+  .mode-toggle:hover{ 
+    border-color:var(--gold); 
+    transform:scale(1.05);
+    box-shadow:var(--shadow-card);
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    text-align:center;
+    padding:72px 20px 56px;
+    background:
+      radial-gradient(ellipse at 50% -10%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 60%),
+      var(--bg-page);
+    border-bottom:0.5px solid var(--border);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .kicker{
+    font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--gold-800); font-weight:600; margin-bottom:16px;
+    opacity:0; animation:fadeUp .7s ease forwards;
+  }
+  .hero h1{
+    font-family:'Lora',serif; font-weight:500; font-style:italic;
+    font-size:clamp(28px,5vw,46px); margin:0 0 10px; color:var(--ink-900);
+    opacity:0; animation:fadeUp .8s ease .1s forwards;
+  }
+  .hero .subtitle{
+    font-size:18px; color:var(--ink-700); margin:0 0 28px;
+    opacity:0; animation:fadeUp .8s ease .2s forwards;
+  }
+  .hero .verse{
+    max-width:520px; margin:0 auto; font-family:'Lora',serif; font-style:italic;
+    font-size:15px; color:var(--ink-500); border-left:2px solid var(--gold);
+    padding:10px 18px; text-align:left; display:inline-block;
+    opacity:0; animation:fadeUp .8s ease .3s forwards;
+  }
+  .hero-core{
+    position:relative; width:72px; height:72px; margin:0 auto 22px;
+    display:grid; place-items:center; color:var(--gold-800);
+    opacity:0; animation:fadeUp .7s ease forwards;
+  }
+  .hero-core::before,
+  .hero-core::after{
+    content:''; position:absolute; inset:0; border:1px solid var(--gold);
+    border-radius:50%; opacity:.45; animation:pulseRing 3s ease-out infinite;
+  }
+  .hero-core::after{ animation-delay:1.5s; }
+  .hero-core span{
+    position:relative; z-index:1; width:42px; height:42px; border-radius:50%;
+    display:grid; place-items:center; background:var(--gold-50);
+    border:1px solid var(--gold); font-family:'Lora',serif; font-size:24px;
+  }
+  @keyframes pulseRing{
+    0%{ transform:scale(.72); opacity:.5; }
+    70%,100%{ transform:scale(1.5); opacity:0; }
+  }
+  .thesis-visual{
+    display:grid; grid-template-columns:1fr auto 1fr; align-items:center;
+    gap:14px; max-width:620px; margin:34px auto 0;
+    opacity:0; animation:fadeUp .8s ease .45s forwards;
+  }
+  .thesis-pole{
+    padding:14px 12px; border:1px solid var(--border); border-radius:var(--radius-md);
+    background:color-mix(in srgb, var(--bg-card) 72%, transparent);
+    box-shadow:var(--shadow-card); text-align:left;
+  }
+  .thesis-pole strong{ display:block; font-size:13px; margin-bottom:3px; }
+  .thesis-pole small{ color:var(--ink-muted); font-size:11px; }
+  .thesis-pole.is-law{ border-top:3px solid var(--burgundy); }
+  .thesis-pole.is-grace{ border-top:3px solid var(--teal); }
+  .thesis-link{ display:grid; gap:5px; justify-items:center; color:var(--gold); }
+  .thesis-link i{ font-size:20px; animation:beat 1.8s ease-in-out infinite; }
+  .thesis-link span{ font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-muted); }
+  @keyframes beat{ 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.25); } }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:translateY(0);} }
+
+  /* floating decorative particles */
+  .particle{
+    position:absolute; border-radius:50%;
+    background:var(--gold); opacity:.12;
+    animation:float 14s ease-in-out infinite;
+  }
+  @keyframes float{
+    0%,100%{ transform:translateY(0) translateX(0); }
+    50%{ transform:translateY(-24px) translateX(10px); }
+  }
+
+  /* ---------- table of contents ---------- */
+  .toc{
+    max-width:760px; margin:-28px auto 0; padding:0 20px 40px;
+    position:relative; z-index:2;
+  }
+  .toc-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:10px;
+  }
+  .toc-item{
+    background:var(--bg-card); border:0.5px solid var(--border);
+    border-radius:var(--radius-md); padding:14px 16px;
+    display:flex; align-items:center; gap:10px; cursor:pointer;
+    text-decoration:none; color:var(--ink-900);
+    box-shadow:var(--shadow-card);
+    transition:all .3s ease;
+    opacity:0; transform:translateY(14px);
+  }
+  .toc-item:hover{ 
+    transform:translateY(-6px); 
+    border-color:var(--gold);
+    box-shadow:var(--shadow-hover);
+    background:var(--gold-50);
+  }
+  .toc-item .num{
+    width:26px; height:26px; border-radius:50%; flex:0 0 auto;
+    background:var(--gold-50); color:var(--gold-800);
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:600;
+  }
+  .toc-item span.label{ font-size:14px; font-weight:500; }
+
+  /* ---------- container / sections ---------- */
+  .wrap{ max-width:760px; margin:0 auto; padding:0 20px 100px; }
+  section.block{
+    opacity:0; transform:translateY(20px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  section.block.in-view{ opacity:1; transform:translateY(0); }
+  section.block{ margin-bottom:60px; }
+
+  .sec-head{
+    display:flex; gap:16px; align-items:flex-start; margin-bottom:32px;
+  }
+  .sec-head .badge{
+    width:36px; height:36px; border-radius:50%;
+    background:var(--gold-50); color:var(--gold-800);
+    font-weight:700; display:flex; align-items:center; justify-content:center;
+    font-size:18px; flex:0 0 auto;
+  }
+  .sec-head .eyebrow{
+    font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-muted); font-weight:600;
+  }
+  .sec-head h2{
+    font-family:'Lora',serif; font-size:32px; font-weight:500;
+    margin:0; color:var(--ink-900);
+  }
+
+  p.lead{
+    font-size:17px; color:var(--ink-700); line-height:1.75;
+    margin-bottom:32px;
+  }
+
+  /* ---------- charts & visualizations ---------- */
+  .chart-label{
+    display:flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:600; letter-spacing:.05em;
+    text-transform:uppercase; color:var(--ink-muted);
+    margin:32px 0 16px;
+  }
+  .chart-label i{ color:var(--gold); font-size:16px; }
+
+  .chart-card{
+    background:var(--bg-card); border:0.5px solid var(--border);
+    border-radius:var(--radius-lg); padding:24px;
+    box-shadow:var(--shadow-card);
+    margin-bottom:28px;
+    transition:all .3s ease;
+  }
+  .chart-card:hover{
+    border-color:var(--gold);
+    box-shadow:var(--shadow-hover);
+    transform:translateY(-2px);
+  }
+
+  .chart-wrap{
+    position:relative; height:280px; margin-bottom:16px;
+  }
+
+  .chart-note{
+    font-size:13px; color:var(--ink-500); font-style:italic;
+    margin:0; padding-top:12px; border-top:1px solid var(--border);
+  }
+
+  /* ---------- callout styles ---------- */
+  .callout{
+    border-left:4px solid var(--gold); background:var(--gold-50);
+    padding:16px 20px; border-radius:8px; margin-bottom:24px;
+    transition:all .3s ease;
+  }
+  .callout.danger{
+    border-left-color:var(--red);
+    background:color-mix(in srgb, var(--red) 6%, var(--bg-card));
+  }
+  .callout:hover{
+    transform:translateX(4px);
+    box-shadow:var(--shadow-card);
+  }
+  .callout-title{
+    display:flex; align-items:center; gap:8px;
+    font-weight:600; color:var(--ink-900); margin-bottom:12px;
+    font-size:15px;
+  }
+  .callout-title i{ font-size:18px; }
+  .callout p{ margin:8px 0; }
+  .callout .quote{
+    font-style:italic; color:var(--ink-700); margin:12px 0;
+    padding-left:12px; border-left:2px solid var(--ink-500);
+  }
+  .callout .ref{
+    font-size:13px; color:var(--ink-500);
+  }
+
+  /* ---------- comparison boxes ---------- */
+  .eq-pair{
+    display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0;
+  }
+  .eq-pair .box{
+    background:var(--bg-soft); padding:12px 16px; border-radius:8px;
+    border:1px solid var(--border); transition:all .3s ease;
+    font-size:13px; font-weight:500;
+  }
+  .eq-pair .box:hover{
+    background:var(--bg-card);
+    border-color:var(--gold);
+    transform:scale(1.05);
+  }
+  .eq-pair .box code{
+    display:block; font-family:'Courier New', monospace;
+    background:var(--bg-page); padding:8px; border-radius:4px;
+    margin-top:8px; font-size:12px; color:var(--ink-900);
+    word-break:break-word;
+  }
+
+  /* ---------- comparison table ---------- */
+  .cmp{
+    width:100%; min-width:620px; border-collapse:collapse; margin:24px 0;
+    background:var(--bg-card); border-radius:var(--radius-md);
+    overflow:hidden; box-shadow:var(--shadow-card);
+  }
+  .table-scroll{ width:100%; overflow-x:auto; margin:24px 0; }
+  .table-scroll .cmp{ margin:0; }
+  .cmp thead{
+    background:var(--gold-50);
+  }
+  .cmp th{
+    padding:14px 16px; text-align:left; font-weight:600;
+    color:var(--gold-800); font-size:13px;
+  }
+  .cmp td{
+    padding:12px 16px; border-top:1px solid var(--border);
+    font-size:14px; color:var(--ink-700);
+  }
+  .cmp tbody tr{
+    transition:background .25s ease;
+  }
+  .cmp tbody tr:hover{
+    background:var(--gold-50);
+    box-shadow:inset 0 0 8px rgba(166,130,46,0.1);
+  }
+
+  /* ---------- defense cards ---------- */
+  .defense-card{
+    background:var(--bg-card); border:1px solid var(--border);
+    border-radius:var(--radius-lg); padding:20px;
+    margin-bottom:20px; transition:all .3s ease;
+    box-shadow:var(--shadow-card);
+  }
+  .defense-card:hover{
+    border-color:var(--gold);
+    box-shadow:var(--shadow-hover);
+    transform:translateY(-4px);
+  }
+  .defense-card .row{
+    display:flex; gap:12px; margin-bottom:16px;
+  }
+  .defense-card .row:last-child{
+    margin-bottom:0;
+  }
+  .defense-card .row i{
+    font-size:20px; flex:0 0 auto; margin-top:2px;
+  }
+  .defense-card .row.obj i{ color:var(--red); }
+  .defense-card .row.def i{ color:var(--green); }
+  .defense-card .row .label{
+    font-weight:600; font-size:12px; text-transform:uppercase;
+    letter-spacing:.05em; display:block; margin-bottom:4px;
+  }
+  .defense-card .row p{
+    margin:0; color:var(--ink-700); font-size:14px;
+  }
+
+  /* ---------- conclusion ---------- */
+  .conclusion{
+    background:linear-gradient(135deg, var(--gold-50), var(--teal-50));
+    padding:56px 20px; text-align:center; border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    margin-top:80px;
+  }
+  .conclusion .verse{
+    font-family:'Lora',serif; font-style:italic;
+    font-size:18px; color:var(--ink-900); margin-bottom:24px;
+  }
+  .divider{
+    width:80px; height:2px; background:var(--gold); margin:0 auto 24px;
+    border-radius:1px;
+  }
+  .conclusion .final{
+    font-size:17px; color:var(--ink-700); font-weight:500;
+    line-height:1.8; max-width:600px; margin:0 auto;
+    font-style:italic;
+  }
+
+  footer{
+    text-align:center; padding:40px 20px;
+    font-size:12px; color:var(--ink-muted);
+  }
+  footer .watermark{ display:block; margin:0 auto 16px; color:var(--gold-800); }
+
+  /* ---------- to-top button ---------- */
+  .to-top{
+    position:fixed; bottom:20px; right:20px;
+    width:44px; height:44px; border-radius:50%;
+    background:var(--gold); color:white;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; opacity:0; pointer-events:none;
+    transition:all .3s ease;
+    box-shadow:var(--shadow-card);
+    font-size:18px;
+  }
+  .to-top.show{ opacity:1; pointer-events:auto; }
+  .to-top:hover{
+    transform:scale(1.15) translateY(-4px);
+    background:var(--gold-800);
+    box-shadow:var(--shadow-hover);
+  }
+
+  /* ---------- stat cards ---------- */
+  .stat-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+    gap:16px; margin:24px 0;
+  }
+  .stat-card{
+    background:var(--bg-card); border:1px solid var(--border);
+    border-radius:var(--radius-md); padding:20px;
+    text-align:center; transition:all .3s ease;
+    box-shadow:var(--shadow-card);
+    position:relative;
+    overflow:hidden;
+  }
+  .stat-card::before{
+    content:''; position:absolute; top:0; left:0;
+    width:100%; height:3px;
+    background:linear-gradient(90deg, var(--gold), var(--burgundy));
+    opacity:0; transition:opacity .3s ease;
+  }
+  .stat-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--gold);
+    box-shadow:var(--shadow-hover);
+  }
+  .stat-card:hover::before{
+    opacity:1;
+  }
+  .stat-card .value{
+    font-size:28px; font-weight:700; color:var(--gold);
+    margin-bottom:6px;
+  }
+  .stat-card .label{
+    font-size:12px; text-transform:uppercase;
+    letter-spacing:.05em; color:var(--ink-muted);
+    font-weight:600;
+  }
+
+  /* ---------- highlight badges ---------- */
+  .highlight{
+    display:inline-block;
+    background:var(--gold-50);
+    color:var(--gold-800);
+    padding:2px 6px;
+    border-radius:4px;
+    font-weight:600;
+    font-size:12px;
+  }
+
+  /* ---------- evidence badge ---------- */
+  .evidence-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background:var(--teal-50);
+    color:var(--teal-800);
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+    margin:4px;
+    transition:all .3s ease;
+  }
+  .evidence-badge:hover{
+    transform:scale(1.08);
+    box-shadow:var(--shadow-card);
+  }
+
+  /* ---------- responsive ---------- */
+  @media(max-width:760px){
+    .topbar{ padding:10px 14px; }
+    .topbar .brand{ font-size:12px; }
+    .topbar .watermark{ max-width:190px; font-size:8px; }
+    .mode-toggle{ padding:6px 9px; }
+    .hero{ padding:56px 16px 44px; }
+    .hero .subtitle{ font-size:16px; }
+    .wrap{ padding-left:16px; padding-right:16px; }
+    .sec-head{ gap:12px; margin-bottom:24px; }
+    .sec-head h2{ font-size:28px; line-height:1.25; }
+    .chart-card{ padding:16px; }
+    .chart-wrap{ height:240px; }
+    .conclusion{ padding:44px 16px; }
+    .cmp{ min-width:0; table-layout:fixed; }
+    .cmp th, .cmp td{ padding:10px 7px; font-size:11px; line-height:1.45; overflow-wrap:anywhere; }
+    .thesis-visual{ gap:7px; }
+    .thesis-pole{ padding:12px 8px; }
+    .thesis-pole small{ font-size:10px; }
+  }
+
+  @media(max-width:600px){
+    .eq-pair{ grid-template-columns:1fr; }
+    .sec-head{ flex-direction:column; }
+    .sec-head h2{ font-size:24px; }
+    .stat-grid{ grid-template-columns:repeat(2, 1fr); }
+    .topbar .brand span{ display:none; }
+    .topbar .watermark{ max-width:175px; }
+    .hero h1{ font-size:30px; }
+    .hero .verse{ font-size:14px; }
+    .thesis-visual{ grid-template-columns:1fr; max-width:260px; }
+    .thesis-link{ transform:rotate(90deg); height:24px; }
+    .thesis-link span{ transform:rotate(-90deg); }
+    .toc{ padding-left:16px; padding-right:16px; }
+    .toc-grid{ grid-template-columns:1fr 1fr; }
+    .toc-item{ padding:12px; }
+    .toc-item span.label{ font-size:13px; }
+    .stat-grid{ gap:10px; }
+    .stat-card{ padding:16px 10px; }
+    .stat-card .value{ font-size:24px; }
+    .defense-card{ padding:16px; }
+    .defense-card .row{ gap:8px; }
+    .chart-label{ font-size:11px; }
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *, *::before, *::after{
+      scroll-behavior:auto !important;
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+<header class="topbar">
+  <div class="brand">
+    <i class="ti ti-book"></i>
+    <span>Defensa de la Fe</span>
+  </div>
+  <div class="watermark">FURA · fuerza universitaria rescatando, restaurando y renovando almas.</div>
+  <button class="mode-toggle" id="modeToggle">
+    <i id="modeIcon" class="ti ti-moon"></i>
+    <span id="modeLabel">Oscuro</span>
+  </button>
+</header>
+
+<section class="hero">
+  <div class="particle" style="width:12px; height:12px; top:10%; left:5%; animation-delay:-2s;"></div>
+  <div class="particle" style="width:8px; height:8px; top:25%; right:8%; animation-delay:-4s;"></div>
+  <div class="particle" style="width:10px; height:10px; bottom:15%; left:10%; animation-delay:-6s;"></div>
+  
+  <div class="hero-core" aria-hidden="true"><span>?</span></div>
+  <span class="kicker">DEFENSA HISTÓRICA Y TEOLÓGICA</span>
+  <h1>¿Estoy en la religión correcta?</h1>
+  <p class="subtitle">Cristianismo vs. Islam: análisis documentado para jóvenes universitarios</p>
+  <div class="verse">"De manera que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas." — 2 Corintios 5:17</div>
+  <div class="thesis-visual" aria-label="Contraste entre ley y gracia">
+    <div class="thesis-pole is-law">
+      <strong>El hombre busca a Dios</strong>
+      <small>ley · obras · mérito</small>
+    </div>
+    <div class="thesis-link" aria-hidden="true">
+      <i class="ti ti-arrows-left-right"></i>
+      <span>la pregunta</span>
+    </div>
+    <div class="thesis-pole is-grace">
+      <strong>Dios se acerca al hombre</strong>
+      <small>gracia · cruz · resurrección</small>
+    </div>
+  </div>
+</section>
+
+<section class="toc">
+  <div class="toc-grid">
+    <a href="#s1" class="toc-item">
+      <div class="num">1</div>
+      <span class="label">Fundamento</span>
+    </a>
+    <a href="#s2" class="toc-item">
+      <div class="num">2</div>
+      <span class="label">Evidencia</span>
+    </a>
+    <a href="#s3" class="toc-item">
+      <div class="num">3</div>
+      <span class="label">Inconsistencias</span>
+    </a>
+    <a href="#s4" class="toc-item">
+      <div class="num">4</div>
+      <span class="label">Defensa</span>
+    </a>
+    <a href="#s5" class="toc-item">
+      <div class="num">5</div>
+      <span class="label">Conclusión</span>
+    </a>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="block" id="s1">
+    <div class="sec-head">
+      <span class="badge">1</span>
+      <div>
+        <span class="eyebrow">Punto de partida</span>
+        <h2>Diferencias fundamentales</h2>
+      </div>
+    </div>
+
+    <p class="lead">Toda religión responde a la pregunta central: <strong>¿Cómo se relaciona el hombre con Dios?</strong> Las respuestas no son apenas diferentes; son <strong>mutuamente excluyentes</strong>.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="value">600</div>
+        <div class="label">Años de brecha</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">5.800+</div>
+        <div class="label">Manuscritos NT</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">40</div>
+        <div class="label">Años a evangelios</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">12</div>
+        <div class="label">Testigos clave</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px; color:var(--ink-900);">La cuestión teológica central</h3>
+    
+    <div class="callout danger">
+      <div class="callout-title"><i class="ti ti-info-circle"></i> Pregunta definitiva</div>
+      <p style="font-weight:600; margin:12px 0 0;">En Islam: ¿Dios se aproxima al hombre?</p>
+      <p style="margin:12px 0;">Respuesta: <strong>No. El hombre debe subir mediante la ley y las obras.</strong></p>
+      <div style="height:1px; background:var(--border); margin:16px 0;"></div>
+      <p style="font-weight:600; margin:12px 0 0;">En Cristianismo: ¿Se encarnó Dios en la historia?</p>
+      <p style="margin:12px 0;">Respuesta: <strong>Sí. Dios descendió, murió, resucitó. Es un hecho histórico verificable.</strong></p>
+    </div>
+
+    <h3 style="margin-top:40px; color:var(--ink-900);">Tabla comparativa estructural</h3>
+    
+    <div class="table-scroll">
+    <table class="cmp">
+      <thead><tr><th>Aspecto</th><th>Islam</th><th>Cristianismo</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Naturaleza de Dios</strong></td><td>Único, lejano, abstracto</td><td>Triuno, íntimo, encarnado</td></tr>
+        <tr><td><strong>¿Quién es Jesús?</strong></td><td>Profeta humano (no divino)</td><td>Dios encarnado (100% Dios, 100% hombre)</td></tr>
+        <tr><td><strong>¿Murió en la cruz?</strong></td><td>No. Fue levantado al cielo (Surah 4:157)</td><td>Sí. Murió por nuestros pecados, resucitó al tercer día</td></tr>
+        <tr><td><strong>¿Cómo se gana el amor de Dios?</strong></td><td>Mediante obediencia a la ley (Sharia)</td><td>Ya fue demostrado antes de actuar (gracia)</td></tr>
+        <tr><td><strong>¿Dónde está la prueba?</strong></td><td>En cumplimiento futuro (el Juicio Final)</td><td>En un evento histórico pasado (Resurrección)</td></tr>
+        <tr><td><strong>Naturaleza del pacto</strong></td><td>Contractual: tú cumples, Dios premia</td><td>Sacrificial: Cristo cumplió por ti</td></tr>
+        <tr><td><strong>¿Hay certeza de salvación?</strong></td><td>No. Ni Mahoma la tuvo (Surah 46:9)</td><td>Sí. Basada en la promesa de Cristo</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p style="font-size:13px; color:var(--ink-500); margin-top:20px; text-align:center;">
+      <span class="evidence-badge"><i class="ti ti-alert-circle"></i>Nota crítica</span>
+      Estas diferencias no son de grado, sino de <strong>naturaleza</strong>. Ambas no pueden ser ciertas simultáneamente.
+    </p>
+  </section>
+
+  <section class="block" id="s2">
+    <div class="sec-head">
+      <span class="badge">2</span>
+      <div>
+        <span class="eyebrow">Evidencia documentaria</span>
+        <h2>Refuerzo histórico-técnico</h2>
+      </div>
+    </div>
+
+    <p class="lead">El islam afirma que la Biblia fue <strong>corrompida</strong> y que Jesús <strong>no murió</strong> en la cruz (Surah 4:157). Pero para sostener eso, pide creer un texto escrito ~600 años después del evento, <strong>ignorando testigos oculares</strong> y la historiografía secular (Tácito, Josefo, Plinio).</p>
+
+    <div class="chart-label"><i class="ti ti-chart-bar"></i> Gráfica 1 — Volumen de manuscritos antiguos</div>
+    <div class="chart-card">
+      <div class="chart-wrap">
+        <canvas id="chart1"></canvas>
+      </div>
+      <p class="chart-note"><strong>Conclusión:</strong> El Nuevo Testamento tiene casi <span class="highlight">10x más evidencia</span> manuscrita que cualquier otro texto de la antigüedad. Para corromper un texto, hay que corromper simultáneamente 5,800 copias independientes en lenguas, regiones y épocas distintas. Es <strong>matemáticamente imposible</strong>.</p>
+    </div>
+
+    <div class="chart-label"><i class="ti ti-clock-hour-4"></i> Gráfica 2 — Brecha temporal a la documentación</div>
+    <div class="chart-card">
+      <div class="chart-wrap">
+        <canvas id="chart2"></canvas>
+      </div>
+      <p class="chart-note"><strong>Análisis:</strong> Los evangelios se escriben <span class="highlight">dentro de la generación</span> de testigos oculares (40 años); el Corán narra el mismo evento <span class="highlight">15 veces después</span> (600 años), sin fuentes primarias verificables. La arqueología apoya a los evangelistas, no al Corán.</p>
+    </div>
+
+    <div class="chart-label"><i class="ti ti-trending-up"></i> Gráfica 3 — Tasa de confiabilidad textual</div>
+    <div class="chart-card">
+      <div class="chart-wrap">
+        <canvas id="chart3"></canvas>
+      </div>
+      <p class="chart-note"><strong>Credibilidad:</strong> La mayoría de los expertos críticos (incluso no cristianos) reconocen que el Nuevo Testamento fue documentado dentro de 40-70 años de los eventos, con <span class="highlight">98.5% de concordancia</span> entre manuscritos. Las diferencias son mayormente ortográficas, no doctrinales.</p>
+    </div>
+
+    <h3 style="margin-top:40px; color:var(--ink-900);">Fuentes seculares que mencionan la crucifixión</h3>
+    
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="value">Tácito</div>
+        <div class="label">Historiador romano (120 d.C.)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">Josefo</div>
+        <div class="label">Historiador judío (93 d.C.)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">Plinio</div>
+        <div class="label">Gobernador romano (112 d.C.)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">Luciano</div>
+        <div class="label">Satírico griego (170 d.C.)</div>
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:24px; color:var(--ink-700); font-size:14px;">
+      <strong>Dato clave:</strong> Ni un solo historiador secular antiguo cuestiona la crucifixión de Jesús. Todos los que la mencionan la dan por establecida.
+    </p>
+  </section>
+
+  <section class="block" id="s3">
+    <div class="sec-head">
+      <span class="badge">3</span>
+      <div>
+        <span class="eyebrow">Inconsistencias doctrinales</span>
+        <h2>Puntos de quiebre lógico</h2>
+      </div>
+    </div>
+
+    <p class="lead">Si la doctrina islámica es correcta, hay inconsistencias que la atacan desde dentro. Aquí están las más críticas.</p>
+
+    <div class="callout danger" style="margin-top:28px;">
+      <div class="callout-title"><i class="ti ti-alert-triangle"></i> Objeción #1: La cruz y el sacrificio</div>
+      <p><strong>Si Jesús no murió, no hay sacrificio.</strong></p>
+      <p class="quote">"Y si Cristo no resucitó, vana es entonces nuestra predicación, vana es también vuestra fe." — 1 Corintios 15:14</p>
+      <p style="margin:14px 0 0;">El cristianismo primitivo es <strong>insostenible sin la resurreción</strong>. Los discípulos no inventaron eso. ¿Por qué?</p>
+      <p class="ref" style="margin-top:12px;"><strong>Pregunta que desarma:</strong> ¿Por qué murieron los discípulos —torturados, exiliados, crucificados— defendiendo algo que <u>ellos mismos</u> sabían que era mentira? ¿Qué ganan con una conspiración fallida?</p>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-title"><i class="ti ti-scale"></i> Objeción #2: La balanza vs. la gracia</div>
+      <div class="eq-pair">
+        <div class="box">
+          <strong>Ecuación Islámica</strong>
+          <code>Fe + Obras Buenas > Obras Malas</code>
+          <p style="margin-top:8px; font-size:12px;">Tú ganas el favor de Dios.</p>
+        </div>
+        <div class="box">
+          <strong>Ecuación Cristiana</strong>
+          <code>Gracia Recibida por Fe</code>
+          <p style="margin-top:8px; font-size:12px;">Dios ya te lo dio (sin mérito tuyo).</p>
+        </div>
+      </div>
+      <p style="margin-top:16px;"><strong>El problema islámico:</strong> En el Islam, <span class="highlight">no hay certeza de salvación</span> ni siquiera para el profeta: <em>"Surah 46:9 dice que ni Mahoma sabía cuál sería su destino."</em></p>
+      <p>En el cristianismo, la certeza no descansa en ti: descansa en las promesas de Cristo. Es <strong>seguridad existencial fundamentada</strong>.</p>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-title"><i class="ti ti-question-circle"></i> Objeción #3: La corrupción de la Biblia</div>
+      <p><strong>Afirmación islámica:</strong> "La Biblia fue corrompida."</p>
+      <p style="margin-top:12px;"><strong>Problema lógico:</strong></p>
+      <ul style="margin-top:12px; padding-left:24px;">
+        <li>Si la Biblia fue corrompida, ¿cuándo? El Corán respeta los evangelios (Surah 3:3-4).</li>
+        <li>¿Cómo se corrompen simultáneamente 5,800 manuscritos, en distintas lenguas, sin coordinar?</li>
+        <li>Los criterios de autenticidad usados por estudiosos modernos (incluso agnósticos como Bart Ehrman) confirman que el Nuevo Testamento es <strong>demostrablemente íntegro</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-title"><i class="ti ti-bolt"></i> Objeción #4: La problemática "revelación tardía"</div>
+      <p><strong>Pregunta incómoda:</strong> Si Muhammad es el "sello de los profetas," ¿por qué vino 600 años después de la supuesta prueba máxima (la encarnación)?</p>
+      <p style="margin-top:12px;"><strong>Analógicamente:</strong></p>
+      <div class="eq-pair">
+        <div class="box">
+          Si un amigo te salvó del fuego en 33 d.C. (testigos presentes)...
+        </div>
+        <div class="box">
+          ...¿Creerías una carta de alguien (año 600 d.C.) que diga que <u>no pasó así</u>?
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="s4">
+    <div class="sec-head">
+      <span class="badge">4</span>
+      <div>
+        <span class="eyebrow">Argumentación</span>
+        <h2>Respuestas a objeciones comunes</h2>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:-8px;">Tus dos objeciones más comunes, listas para responder en conversación directa con un musulmán.</p>
+
+    <div class="defense-card">
+      <div class="row obj">
+        <i class="ti ti-message-question"></i>
+        <div>
+          <span class="label">Objeción 1</span>
+          <p>"La Biblia se copió y tradujo tanto que se alteró. No podemos confiar en textos antiguos."</p>
+        </div>
+      </div>
+      <div class="row def">
+        <i class="ti ti-shield-check"></i>
+        <div>
+          <span class="label">Respuesta</span>
+          <p><strong>Estructura:</strong> "Falso, y te muestro por qué."</p>
+          <p style="margin-top:8px;">1) Se traduce directo de más de 5,800 manuscritos griegos antiguos, no de traducciones previas (retrotraducción).</p>
+          <p style="margin-top:8px;">2) Es un sistema <strong>distribuido:</strong> si un nodo (manuscrito) falla, los miles restantes lo corrigen automáticamente.</p>
+          <p style="margin-top:8px;">3) Los académicos (incluso agnosticismos) usan <strong>crítica textual</strong> para identificar inserciones tardías (Marcos 16:9-20, Juan 7:53-8:11). Eso demuestra <em>integridad del método,</em> no corrupción.</p>
+          <p style="margin-top:8px;"><strong>Cierre:</strong> "Si se hubiera corrompido masivamente, los propios académicos no podrían saberlo. Pero pueden. Luego no se corrompió."</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="defense-card">
+      <div class="row obj">
+        <i class="ti ti-message-question"></i>
+        <div>
+          <span class="label">Objeción 2</span>
+          <p>"El Corán es perfecto porque nunca tuvo variantes. Eso prueba su preservación divina."</p>
+        </div>
+      </div>
+      <div class="row def">
+        <i class="ti ti-shield-check"></i>
+        <div>
+          <span class="label">Respuesta</span>
+          <p><strong>Estructura:</strong> "No es preservación divina; es estandarización forzada."</p>
+          <p style="margin-top:8px;">1) El califa Uthman (650 d.C., <strong>20 años después de Muhammad</strong>) ordenó la <strong>quema sistemática</strong> de variantes textuales que circulaban.</p>
+          <p style="margin-top:8px;">2) Los eruditos islámicos hablan de 7 (o 10, según fuentes) "modos de recitación" (qiraat), que son diferencias textuales reales.</p>
+          <p style="margin-top:8px;">3) Homogeneidad forzada ≠ preservación divina. Parece más <strong>destrucción de evidencia.</strong></p>
+          <p style="margin-top:8px;"><strong>Contraste:</strong> "La Biblia tiene 5,800 copias antiguas, en desacuerdo parcial, pero íntegra en esencia. El Corán tuvo variantes que fueron <u>quemadas.</u> ¿Cuál es más confiable?"</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="defense-card">
+      <div class="row obj">
+        <i class="ti ti-message-question"></i>
+        <div>
+          <span class="label">Objeción 3</span>
+          <p>"Jesús no afirmó ser Dios. Los cristianos lo hicieron después."</p>
+        </div>
+      </div>
+      <div class="row def">
+        <i class="ti ti-shield-check"></i>
+        <div>
+          <span class="label">Respuesta</span>
+          <p><strong>Estructura:</strong> "Falso. Los evangelios documentan que Jesús <u>implicaba</u> divinidad constantemente."</p>
+          <p style="margin-top:8px;">1) <strong>Yo Soy</strong> (Ego Eimi en griego): "Antes de que Abraham fuese, yo soy" (Juan 8:58). Los judíos <strong>lo entendieron como una afirmación blasfema</strong> de divinidad. Lo apedreaban por eso.</p>
+          <p style="margin-top:8px;">2) <strong>Perdón de pecados:</strong> "Tus pecados te son perdonados" (Marcos 2:5). Solo Dios perdona pecados. Los fariseos lo sabían.</p>
+          <p style="margin-top:8px;">3) <strong>Autoridad sobre el Sabbath:</strong> "El Hijo del Hombre es Señor del Sabbath" (Marcos 2:28). Está igualándose con Dios (quien creó el Sabbath).</p>
+          <p style="margin-top:8px;"><strong>Cierre:</strong> "Los discípulos no <u>inventaron</u> la divinidad de Jesús. Huyeron aterrados cuando lo crucificaron. Solo la Resurrección los convenció. Y murieron defendiendo eso."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="s5" style="border-bottom:none; padding-bottom:0;">
+    <div class="sec-head">
+      <span class="badge">5</span>
+      <div>
+        <span class="eyebrow">Reflexión final</span>
+        <h2>Conclusion y síntesis</h2>
+      </div>
+    </div>
+
+    <p class="lead">El Verbo se hizo carne. No fue un mito, una parábola, ni una revelación escrita 600 años después. Fue un <strong>evento histórico</strong>, testificado, documentado, y <strong>verificable.</strong></p>
+
+    <div style="background:var(--teal-50); border-left:4px solid var(--teal); padding:20px; border-radius:8px; margin-top:28px;">
+      <p style="margin:0; font-size:15px; font-weight:600; color:var(--ink-900);">
+        <i class="ti ti-flame" style="color:var(--teal); margin-right:8px;"></i>
+        La pregunta no es "¿Cuál religión suena mejor?" sino "¿Cuál es verdadera?"
+      </p>
+      <p style="margin-top:12px; font-size:14px; color:var(--ink-700);">
+        La cristiandad apuesta todo a que Jesús resucitó. Si eso es verdad, <strong>todo cambia</strong>. Si es falso, "de todos los hombres somos los más dignos de conmiseración" (1 Corintios 15:19).
+      </p>
+      <p style="margin-top:12px; font-size:14px; color:var(--ink-700);">
+        Los discípulos sabían la diferencia. Murieron por ello.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<section class="conclusion">
+  <p class="verse">"Y aquel Verbo fue hecho carne, y habitó entre nosotros (y vimos su gloria, gloria como del unigénito del Padre), lleno de gracia y de verdad." — Juan 1:14</p>
+  <div class="divider"></div>
+  <p class="final">Toda religión es el hombre intentando <strong>subir</strong> hasta Dios. El cristianismo es Dios <strong>descendiendo</strong> para rescatar al hombre que no puede subir. Esa es la diferencia.</p>
+</section>
+
+<footer>
+  <div class="watermark">FURA · fuerza universitaria rescatando, restaurando y renovando almas.</div>
+  <p style="margin:0 0 8px;">📖 Documento preparado para lectura y defensa personal de la fe</p>
+  <p style="margin:0;">Dirigido a jóvenes universitarios | Última actualización: Agosto 2026</p>
+</footer>
+
+<div class="to-top" id="toTop" role="button" aria-label="Volver arriba" tabindex="0"><i class="ti ti-arrow-up"></i></div>
+
+<script>
+let chart1, chart2, chart3;
+
+/* ---------- dark mode toggle ---------- */
+const root = document.documentElement;
+const modeToggle = document.getElementById('modeToggle');
+const modeIcon = document.getElementById('modeIcon');
+const modeLabel = document.getElementById('modeLabel');
+let currentMode = 'light';
+
+function applyMode(mode){
+  currentMode = mode;
+  root.setAttribute('data-mode', mode);
+  modeIcon.className = mode === 'dark' ? 'ti ti-sun' : 'ti ti-moon';
+  modeLabel.textContent = mode === 'dark' ? 'Claro' : 'Oscuro';
+  renderCharts();
+}
+modeToggle.addEventListener('click', () => applyMode(currentMode === 'dark' ? 'light' : 'dark'));
+applyMode(matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+/* ---------- reading progress bar ---------- */
+const progressBar = document.getElementById('progressBar');
+function updateProgress(){
+  const h = document.documentElement;
+  const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  progressBar.style.width = (scrolled || 0) + '%';
+}
+document.addEventListener('scroll', updateProgress);
+
+/* ---------- back to top ---------- */
+const toTop = document.getElementById('toTop');
+document.addEventListener('scroll', () => {
+  toTop.classList.toggle('show', window.scrollY > 500);
+});
+toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+toTop.addEventListener('keydown', e => { if(e.key === 'Enter') window.scrollTo({top:0, behavior:'smooth'}); });
+
+/* ---------- reveal on scroll ---------- */
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in-view'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('section.block').forEach(s => io.observe(s));
+
+/* ---------- toc stagger animation ---------- */
+document.querySelectorAll('.toc-item').forEach((item,i) => {
+  item.style.transitionDelay = (i*0.06)+'s';
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      item.style.transition = 'opacity .5s ease, transform .5s ease, border-color .25s ease';
+      item.style.opacity = '1';
+      item.style.transform = 'translateY(0)';
+    }, 500 + i*60);
+  });
+});
+
+/* ---------- charts ---------- */
+function renderCharts(){
+  const isDark = currentMode === 'dark';
+  const ink = isDark ? '#A9A492' : '#7A766A';
+  const grid = isDark ? '#332F24' : '#E2DECF';
+  const gold = isDark ? '#D8B45A' : '#A6822E';
+  const burgundy = isDark ? '#D98080' : '#7A2E2E';
+  const teal = isDark ? '#5FC3AB' : '#1D6E5E';
+  const blue = isDark ? '#6fa3d1' : '#2a5f8a';
+
+  if(chart1) chart1.destroy();
+  if(chart2) chart2.destroy();
+  if(chart3) chart3.destroy();
+
+  // Chart 1: Manuscritos
+  chart1 = new Chart(document.getElementById('chart1'), {
+    type: 'bar',
+    data: {
+      labels: ['Ilíada', 'Livy', 'Cesar', 'Nuevo Testamento'],
+      datasets: [{
+        label: 'Copias existentes',
+        data: [600, 700, 900, 5800],
+        backgroundColor: [isDark ? '#847F6E' : '#9A9686', isDark ? '#847F6E' : '#9A9686', isDark ? '#847F6E' : '#9A9686', gold],
+        borderRadius: 6,
+        maxBarThickness: 50
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (c) => c.parsed.x.toLocaleString() + ' copias',
+            afterLabel: (c) => {
+              if(c.dataIndex === 3) return '(10x más que cualquier otro)';
+              return '';
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: grid }, ticks: { color: ink, font: { size: 11 } }, title: { display: true, text: 'Copias manuscritas existentes', color: ink, font: { size: 11, weight: 600 } } },
+        y: { grid: { display: false }, ticks: { color: ink, font: { size: 12, weight: 500 } } }
+      }
+    }
+  });
+
+  // Chart 2: Brecha temporal
+  chart2 = new Chart(document.getElementById('chart2'), {
+    type: 'bar',
+    data: {
+      labels: ['Crucifixión → Evangelios', 'Vida de Jesús → Corán'],
+      datasets: [{
+        label: 'Años de brecha',
+        data: [40, 600],
+        backgroundColor: [teal, burgundy],
+        borderRadius: 6,
+        maxBarThickness: 50
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (c) => c.parsed.x + ' años',
+            afterLabel: (c) => {
+              if(c.dataIndex === 0) return '(Una generación de testigos)';
+              if(c.dataIndex === 1) return '(15x más tarde, sin fuentes primarias)';
+              return '';
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: grid }, ticks: { color: ink, font: { size: 11 } }, title: { display: true, text: 'Años transcurridos', color: ink, font: { size: 11, weight: 600 } } },
+        y: { grid: { display: false }, ticks: { color: ink, font: { size: 12, weight: 500 } } }
+      }
+    }
+  });
+
+  // Chart 3: Confiabilidad textual
+  chart3 = new Chart(document.getElementById('chart3'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Concordancia de manuscritos', 'Variantes (mayormente ortográficas)', 'Discrepancias doctrinales'],
+      datasets: [{
+        data: [98.5, 1.3, 0.2],
+        backgroundColor: [gold, blue, burgundy],
+        borderColor: isDark ? '#1F1E19' : '#FFFFFF',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: ink, font: { size: 12 }, padding: 16 }
+        },
+        tooltip: {
+          callbacks: {
+            label: (c) => c.label + ': ' + c.parsed + '%'
+          }
+        }
+      }
+    }
+  });
+}
+
+// Initial render
+setTimeout(renderCharts, 100);
+</script>
+
+</body>
+</html>
