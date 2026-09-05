@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — FURA</title>
+<meta name="description" content="Escríbenos si quieres unirte a FURA en tu universidad, o si tu iglesia quiere apoyar a sus jóvenes universitarios.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="franja-marca"><span></span><span></span><span></span><span></span></div>
+
+<nav class="nav">
+  <div class="nav-interior">
+    <a href="index.html" class="nav-marca"><img src="assets/images/Fura 3 (1).png" alt="FURA" class="nav-logo"></a>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="historia.html">Nuestra historia</a></li>
+      <li><a href="que-hacemos.html">Qué hacemos</a></li>
+      <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="seccion-chica" style="background: var(--humo-claro);">
+  <div class="contenedor">
+    <span class="encabezado-eyebrow">Contacto</span>
+    <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem);">Cuéntanos en qué universidad estás</h1>
+    <p class="lead mt-lg">Ya sea que quieras unirte a un FURA activo, abrir uno nuevo en tu universidad, o que tu iglesia quiera apoyar a sus jóvenes universitarios — escríbenos.</p>
+  </div>
+</header>
+
+<section class="seccion">
+  <div class="contenedor grilla-2" style="align-items: start;">
+
+    <div>
+      <h2 style="font-size: 1.6rem; margin-bottom: var(--esp-md);">Escríbenos directamente</h2>
+      <div class="canales">
+        <!-- Reemplazar por el número real de WhatsApp de FURA, formato 57XXXXXXXXXX -->
+        <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20FURA" class="canal" target="_blank" rel="noopener">
+          <span class="canal-icono">W</span>
+          <div>
+            <h3>WhatsApp</h3>
+            <p>Respuesta directa y rápida</p>
+          </div>
+        </a>
+        <!-- Reemplazar por el correo real de FURA -->
+        <a href="mailto:contacto@fura.org" class="canal">
+          <span class="canal-icono">@</span>
+          <div>
+            <h3>Correo</h3>
+            <p>contacto@fura.org</p>
+          </div>
+        </a>
+        <a href="#" class="canal">
+          <span class="canal-icono">IG</span>
+          <div>
+            <h3>Instagram</h3>
+            <p>Síguenos y mira fotos de cada FURA</p>
+          </div>
+        </a>
+        <a href="#" class="canal">
+          <span class="canal-icono">J</span>
+          <div>
+            <h3>JUVIC Colombia</h3>
+            <p>Conoce el proyecto juvenil completo</p>
+          </div>
+        </a>
+      </div>
+
+      <h2 style="font-size: 1.6rem; margin: var(--esp-xl) 0 var(--esp-md);">Universidades con FURA activo</h2>
+      <div class="chips">
+        <span class="chip">UIS</span>
+        <span class="chip">UDES</span>
+        <span class="chip">UNAB</span>
+        <span class="chip">UTS</span>
+        <span class="chip">Universidad de Pamplona</span>
+        <span class="chip">Universidad Militar Nueva Granada</span>
+        <span class="chip">Universidad Nacional de Colombia</span>
+      </div>
+      <p class="formulario-nota mt-lg">¿Tu universidad no está en la lista? Cuéntanos en el formulario — es justamente cómo abrimos cada nuevo FURA.</p>
+    </div>
+
+    <div>
+      <h2 style="font-size: 1.6rem; margin-bottom: var(--esp-md);">O envíanos un mensaje</h2>
+      <form class="formulario" id="formulario-contacto">
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
+        <div class="campo">
+          <label for="universidad">Universidad</label>
+          <input type="text" id="universidad" name="universidad" placeholder="Ej. UIS, UNAB, o la tuya si aún no tenemos FURA allí">
+        </div>
+        <div class="campo">
+          <label for="motivo">¿Por qué nos escribes?</label>
+          <select id="motivo" name="motivo">
+            <option value="Quiero unirme a un FURA activo">Quiero unirme a un FURA activo</option>
+            <option value="Quiero abrir un FURA en mi universidad">Quiero abrir un FURA en mi universidad</option>
+            <option value="Mi iglesia quiere apoyar a FURA">Mi iglesia quiere apoyar a FURA</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos un poco más..."></textarea>
+        </div>
+        <div class="formulario-pie">
+          <button type="submit" class="boton boton-primario">Enviar mensaje</button>
+          <span class="formulario-nota">Se abrirá tu app de correo con el mensaje ya listo.</span>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie-grilla">
+      <div>
+        <div class="pie-marca">FURA</div>
+        <p>Fuerza Universitaria Restaurando, Rescatando y Renovando Almas. Un proyecto de Juventud Impacto Colombia (JUVIC), parte del Movimiento Misionero Mundial.</p>
+      </div>
+      <div>
+        <h4>Explora</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="historia.html">Nuestra historia</a></li>
+          <li><a href="que-hacemos.html">Qué hacemos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Conecta</h4>
+        <ul>
+          <li><a href="mailto:contacto@fura.org">Escríbenos</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">JUVIC Colombia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pie-base">
+      <span>© 2026 FURA · Cristianos en la U</span>
+      <span>Marcos 16:15</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  document.getElementById('formulario-contacto').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var nombre = document.getElementById('nombre').value;
+    var correo = document.getElementById('correo').value;
+    var universidad = document.getElementById('universidad').value;
+    var motivo = document.getElementById('motivo').value;
+    var mensaje = document.getElementById('mensaje').value;
+
+    // Reemplazar por el correo real de FURA
+    var destino = 'contacto@fura.org';
+    var asunto = encodeURIComponent('Contacto FURA — ' + motivo);
+    var cuerpo = encodeURIComponent(
+      'Nombre: ' + nombre + '\n' +
+      'Correo: ' + correo + '\n' +
+      'Universidad: ' + universidad + '\n' +
+      'Motivo: ' + motivo + '\n\n' +
+      'Mensaje:\n' + mensaje
+    );
+
+    window.location.href = 'mailto:' + destino + '?subject=' + asunto + '&body=' + cuerpo;
+  });
+</script>
+</body>
+</html>
